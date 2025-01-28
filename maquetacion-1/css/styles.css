@@ -14,6 +14,8 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    /* Evita problemas de cálculo con el ancho */
 }
 
 /*CABECERA*/
@@ -36,8 +38,7 @@
 
 #cabecera #logotipo img {
     display: block;
-    text-align: center;
-    margin: 0px auto;
+    margin: 0 auto;
     width: 140px;
 }
 
@@ -49,19 +50,89 @@
     letter-spacing: 4px;
     margin-top: 10px;
     text-shadow: 0px 2px 1px #333333;
-    transition: all 300ms;
-
+    transition: color 300ms, text-shadow 300ms;
 }
-
-#cabecera h1:hover {
-    text-shadow: 0px 2px 1px #333333, 0px 0px 4px;
-}
-
 
 #cabecera h1:hover {
     color: #70b231;
+    text-shadow: 0px 2px 1px #333333, 0px 0px 4px #70b231;
 }
 
 #cabecera h1 a {
     color: #70b231;
+}
+
+/*BARRA DE NAVEGACION*/
+#menu {
+    width: 100%;
+    height: 40px;
+    background-color: #333333;
+    color: white;
+    font-family: sans-serif, helvetica, arial;
+    box-shadow: 0px 0px 2px gray;
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0 auto;
+    width: 1130px;
+    padding: 0;
+}
+
+#menu>ul>li {
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid gray;
+    transition: background-color 300ms;
+}
+
+#menu>ul>li a {
+    display: block;
+    padding: 0 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+#menu>ul>li:first-child a {
+    border-left: 1px solid gray;
+}
+
+#menu>ul>li:hover {
+    background-color: #70b231;
+    box-shadow: 0px 0px 4px green inset;
+}
+
+/*MENU DESPEGABLE*/
+#menu>ul>li>ul {
+    display: none;
+    position: absolute;
+    width: 160px;
+    box-shadow: 0px 2px 2px gray;
+    z-index: 1;
+}
+
+#menu>ul>li:hover>ul {
+    display: block;
+}
+
+#menu>ul>li:hover>ul>li {
+    border-bottom: 1px solid gray;
+    background-color: #f2f1f0;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px;
+    transition: all 300ms;
+}
+
+
+#menu>ul>li:hover>ul>li a {
+    color: #333333
+}
+
+
+#menu>ul>li:hover>ul>li:hover {
+    box-shadow: 0px 0px 2px #ccc inset;
+    background: rgba(216, 216, 216, );
 }
